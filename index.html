@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio | Razan Muhammad Ikhsan</title>
-    <link rel="icon" type="image/jpg" href="https://files.catbox.moe/ju75p8.jpeg">
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/ju75p8.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
-        /* CSS Reset & Basic Setup */
+        /* CSS Variables & Global Styles */
         :root {
-            --bg-color: #191c24;
-            --primary-color: #232731;
-            --secondary-color: #6c5ce7;
-            --text-color: #e0e0e0;
-            --subtle-text: #a0a0a0;
+            --bg-color: #0D1117;
+            --primary-color: #161B22;
+            --border-color: #30363D;
+            --text-primary: #E6EDF3;
+            --text-secondary: #8B949E;
+            --accent-color: #22D3EE;
         }
 
         * {
@@ -26,181 +29,557 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            color: var(--text-primary);
+            font-size: 16px;
         }
 
-        /* Container Utama */
-        .container {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 20px;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
+        ::-webkit-scrollbar-track {
+            background: var(--primary-color);
         }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--secondary-color);
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05);
-        }
-
-        .header h1 {
-            font-weight: 600;
-            margin-top: 20px;
-            font-size: 2.5rem;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: var(--subtle-text);
-            font-weight: 300;
-        }
-
-        /* Card Style untuk Section */
-        .card {
-            background-color: var(--primary-color);
-            padding: 30px;
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
             border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1cbac9;
         }
 
-        .card h2 {
-            color: var(--secondary-color);
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
             font-weight: 600;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
         }
 
-        /* Layout untuk Skill & Pengalaman (Flexbox) */
-        .skills-experience-grid {
-            display: flex;
-            gap: 30px; 
-            flex-wrap: wrap; 
-        }
-
-        .column {
-            flex: 1; 
-            min-width: 250px; 
-        }
-        
-        /* Styling untuk list */
-        ul {
-            list-style: none; 
-        }
-
-        ul li {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border-left: 3px solid var(--secondary-color);
-            transition: background-color 0.3s ease;
-        }
-
-        ul li:hover {
-            background-color: rgba(108, 92, 231, 0.3);
-        }
-
-        /* Contact Section & Social Links */
-        .contact-links {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .social-link {
-            color: var(--secondary-color);
+        a {
             text-decoration: none;
-            font-size: 1.1rem;
-            margin: 0 15px;
+            color: var(--accent-color);
             transition: color 0.3s ease;
         }
+        a:hover {
+            color: var(--text-primary);
+        }
 
-        .social-link:hover {
-            color: var(--text-color);
+        /* --- Header Section --- */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            outline: 3px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profile-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--primary-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .action-btn:hover {
+            background-color: #2a3038;
+        }
+        .action-btn i {
+            font-size: 1.2rem;
+        }
+
+        .about-me {
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .about-me h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+        .about-me p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* --- Stats Section --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+        .stat-card .value {
+            font-size: 1.1rem;
+            font-weight: 600;
         }
         
-        /* Footer */
-        .footer {
+        /* --- Developer Info --- */
+        .dev-info {
+             display: flex;
+             justify-content: space-between;
+             background-color: var(--primary-color);
+             border: 1px solid var(--border-color);
+             padding: 20px;
+             border-radius: 10px;
+             margin-bottom: 50px;
+        }
+        .info-item {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--primary-color);
-            color: var(--subtle-text);
+            flex-basis: 50%;
+        }
+        .info-item .label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+         .info-item .value {
+            font-size: 1.1rem;
+            font-weight: 500;
+         }
+
+        /* --- Common Section Styles --- */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .section-title i {
+            color: var(--accent-color);
+        }
+        .section-description {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+        
+        /* Faked Spotify Player */
+        .spotify-player {
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+        .player-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .player-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .player-header .track-info h4 {
+            font-size: 1.2rem;
+        }
+        .player-header .track-info p {
+            color: var(--text-secondary);
+        }
+        .player-header .track-info a {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
             font-size: 0.9rem;
         }
+        
+        .track-list ol {
+            list-style: none;
+        }
+        .track-item {
+            display: grid;
+            grid-template-columns: 20px 1fr 50px;
+            gap: 15px;
+            align-items: center;
+            padding: 12px 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .track-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .track-item .track-number {
+            color: var(--text-secondary);
+        }
+        .track-item .track-details .title {
+            font-weight: 500;
+        }
+        .track-item .track-details .artist {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .track-item .track-duration {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: right;
+        }
+        
+        /* --- Projects Section --- */
+        #projects {
+            margin-bottom: 50px;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        .project-tech {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tech-tag {
+            background-color: rgba(34, 211, 238, 0.1);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .project-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .project-links a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+        .project-links a i {
+            font-size: 1.2rem;
+        }
+        
+        /* --- Favorite Anime Section --- */
+        #anime {
+            margin-bottom: 50px;
+        }
+        .anime-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .anime-card {
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .anime-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .anime-details {
+            padding: 20px;
+        }
+        .anime-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .anime-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .anime-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .anime-links .external-link i {
+            font-size: 1.3rem;
+        }
+        
+        /* --- Footer --- */
+        .main-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .footer-section {
+            text-align: left;
+        }
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .quick-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quick-links a {
+            color: var(--text-secondary);
+        }
+        .quick-links a:hover {
+            color: var(--accent-color);
+        }
+        .contact-email {
+            display: block;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+        .contact-btn:hover {
+            opacity: 0.9;
+        }
 
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .copyright p {
+            margin-bottom: 5px;
+        }
+        .copyright .made-with {
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-
         <header class="header">
-            <img src="image/foto.jpg" alt="Foto Profil Razan" class="profile-pic">
-            <h1>Razan Muhammad Ikhsan</h1>
-            <p>Web Developer</p>
+            <img src="/image/foto.jpg" alt="Foto Profil Razan" class="profile-avatar">
+            <div class="profile-actions">
+                <a href="#" class="action-btn"><i class='bx bxs-message-rounded-dots'></i> Who is Razan?</a>
+            </div>
+            <div class="about-me">
+                <h3>About Me</h3>
+                <p>Halo! Saya Razan Muhammad Ikhsan, seorang web developer yang antusias dengan teknologi dan API. Saya suka mengeksplorasi dunia coding, membangun aplikasi inovatif, dan selalu mencari tantangan baru dalam dunia teknologi.</p>
+            </div>
         </header>
 
         <main>
-            <section class="card">
-                <h2>Ringkasan</h2>
-                <p>
-                    Hi, saya adalah seorang web developer yang berdomisili di Bekasi. Saya memiliki antusiasme tinggi dalam membangun aplikasi web yang fungsional dan menarik. Saat ini saya sedang mendalami dunia pengembangan web modern melalui Petani Kode dan sumber lainnya.
-                </p>
-            </section>
-
-            <section class="skills-experience-grid">
-                <div class="column card">
-                    <h2>Keahlian</h2>
-                    <ul>
-                        <li>HTML (Expert)</li>
-                        <li>JavaScript (Beginner)</li>
-                        <li>Git & GitHub (Beginner)</li>
-                    </ul>
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <p class="label">Age</p>
+                    <p class="value">16</p>
                 </div>
-                
-                <div class="column card">
-                    <h2>Pengalaman</h2>
-                    <ul>
-                        <li>Freelancer Web Projects</li>
-                        <li>Kontributor Proyek Open Source</li>
-                    </ul>
+                <div class="stat-card">
+                    <p class="label">Location</p>
+                    <p class="value">Indonesia</p>
+                </div>
+                <div class="stat-card">
+                    <p class="label">Status</p>
+                    <p class="value">Masih Sekolah 🥀</p>
+                </div>
+                <div class="stat-card">
+                    <p class="label">Hobbies</p>
+                    <p class="value">Coding, Anime, Gaming</p>
                 </div>
             </section>
             
-            <section class="card contact-links">
-                <h2>Hubungi Saya</h2>
-                <p>Mari terhubung melalui media sosial atau lihat proyek saya di GitHub!</p>
-                <div>
-                    <a href="https://github.com/RazanMuhammadIkhsan" class="social-link">GitHub</a>
-                    <a href="https://www.instagram.com/razanaja.cuy/" class="social-link">Instagram</a>
-                    <a href="https://x.com/Razan4267?t=RQ4-YHafhbWVImYLQU11SQ&s=09" class="social-link">Twitter</a>
+            <section class="dev-info">
+                <div class="info-item">
+                    <p class="label">Developer</p>
+                    <p class="value">Razan</p>
+                </div>
+                 <div class="info-item">
+                    <p class="label">Anime Series</p>
+                    <p class="value">Re:zero</p>
+                </div>
+            </section>
+            
+             <section id="projects">
+                 <h3 class="section-title"><i class='bx bxs-briefcase-alt-2'></i> My Projects</h3>
+                 <p class="section-description">Berikut adalah beberapa proyek yang pernah saya kerjakan, baik proyek pribadi maupun kontribusi open source.</p>
+                 <div class="project-grid">
+                     <div class="project-card">
+                        <h4>Personal Portfolio</h4>
+                        <p>Website portofolio pribadi yang Anda lihat saat ini, dibuat untuk menampilkan proyek yang saya miliki.</p>
+                        <div class="project-tech">
+                           <span class="tech-tag">HTML5</span>
+                           <span class="tech-tag">CSS3</span>
+                           <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://razan.is-a.dev"><i class='bx bx-link-external'></i> View</a>
+                        </div>
+                     </div>
+                     <div class="project-card">
+                        <h4>Website Manstral</h4>
+                        <p>Sebuah portal web yang dinamis dan sepenuhnya responsif untuk komunitas "Manstral" website ini berfungsi sebagai pusat informasi grup, menampilkan galeri foto, struktur anggota yang dinamis.</p>
+                        <div class="project-tech">
+                           <span class="tech-tag">HTML5</span>
+                           <span class="tech-tag">CSS3</span>
+                           <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://manstral.biz.id"><i class='bx bx-link-external'></i> View</a>
+                        </div>
+                     </div>
+                     <div class="project-card">
+                        <h4>Zann Uploader</h4>
+                        <p>Platform Uploader File dengan Integrasi Google Drive & MongoDB.</p>
+                        <div class="project-tech">
+                           <span class="tech-tag">HTML5</span>
+                           <span class="tech-tag">CSS3</span>
+                           <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://cdn.zannbot.xyz"><i class='bx bx-link-external'></i> View</a>
+                        </div>
+                     </div>
+            </section>
+
+            <section id="music">
+                <h3 class="section-title"><i class='bx bxs-music'></i> My Favorite Tracks</h3>
+                <p class="section-description">Kumpulan lagu-lagu yang selalu menemaniku saat main game santai atau coding dan mengerjakan proyek, memberikan inspirasi dan semangat untuk terus berkarya.</p>
+                <div class="spotify-player">
+                    <div class="player-header">
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7tENBsNm0vZzOvcAGeTOaX?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="anime">
+                <h3 class="section-title"><i class='bx bxs-movie-play'></i> My Favorite Anime</h3>
+                <p class="section-description">Koleksi anime dan donghua favorites ku.</p>
+                <div class="anime-list">
+                    <div class="anime-card">
+                        <img src="https://cdn.zannbot.xyz/api/file/896360c3-31e6-4968-99ac-81db66deb67e" alt="Fanren Xiu Xian Chuan">
+                        <div class="anime-details">
+                            <h4>Re:Zero</h4>
+                            <p class="anime-meta">OVA • Unknown</p>
+                            <div class="anime-links">
+                                <a href="https://myanimelist.net/anime/38414/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_-_Hyouketsu_no_Kizuna?q=re%3Azer&cat=anime">Details</a>
+                                <a href="https://myanimelist.net/anime/38414/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_-_Hyouketsu_no_Kizuna?q=re%3Azer&cat=anime" class="external-link"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="anime-card">
+                        <img src="https://cdn.zannbot.xyz/api/file/21135bb8-665d-4514-bc4e-d2744f5c919d" alt="Oshi no Ko 2nd Season">
+                        <div class="anime-details">
+                            <h4>Soul Eater</h4>
+                            <p class="anime-meta">TV • Unknown</p>
+                            <div class="anime-links">
+                                <a href="https://myanimelist.net/anime/3588/Soul_Eater?q=soul&cat=anime">Details</a>
+                                <a href="https://myanimelist.net/anime/3588/Soul_Eater?q=soul&cat=anime" class="external-link"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
-
-        <footer class="footer">
-            <p>&copy; 2025 Razan Muhammad Ikhsan.</p>
+        
+        <footer class="main-footer">
+            <div class="footer-content">
+                 <div class="footer-section">
+                     <h4><i class='bx bxs-rocket'></i> RAZAN PROJECTS</h4>
+                     <p class="section-description">A personal profile showcasing my journey, skills, and projects.</p>
+                 </div>
+                 <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="quick-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#music">Music</a></li>
+                        <li><a href="#anime">Anime</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                 </div>
+                 <div class="footer-section">
+                    <h4>Contact</h4>
+                     <a href="mailto:contact@razan.site" class="contact-email">razan@zannbot.xyz</a>
+                     <a href="#" class="contact-btn">Contact Me</a>
+                 </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Razan Muhammad Ikhsan. All rights reserved.</p>
+            </div>
         </footer>
-
     </div>
 
 </body>
