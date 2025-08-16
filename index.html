@@ -363,6 +363,51 @@
         .anime-links .external-link i {
             font-size: 1.3rem;
         }
+
+        /* --- Skills Section --- */
+#skills {
+    margin-bottom: 50px;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+.skill-card {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+.skill-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+.skill-card h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.skill-level {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.skill-card .skill-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    object-fit: contain;
+    filter: invert(64%) sepia(57%) saturate(7490%) hue-rotate(156deg) brightness(97%) contrast(94%);
+}
+
+
+
+
         
         /* --- Footer --- */
         .main-footer {
@@ -431,7 +476,7 @@
 
     <div class="container">
         <header class="header">
-            <img src="/image/army.jpg" alt="Foto Profil Razan" class="profile-avatar">
+            <img src="/image/foto.jpg" alt="Foto Profil Razan" class="profile-avatar">
             <div class="profile-actions">
                 <a href="#" class="action-btn"><i class='bx bxs-message-rounded-dots'></i> Who is Razan?</a>
             </div>
@@ -457,7 +502,7 @@
                 </div>
                 <div class="stat-card">
                     <p class="label">Hobbies</p>
-                    <p class="value">Coding, Anime, Gaming</p>
+                    <p class="value">Coding, Anime, Gaming, Design</p>
                 </div>
             </section>
             
@@ -471,6 +516,60 @@
                     <p class="value">Re:zero</p>
                 </div>
             </section>
+
+            <section id="skills">
+    <h3 class="section-title"><i class='bx bxs-bolt'></i> My Skills</h3>
+    <p class="section-description">Beberapa skill pemrograman dan framework yang saya kuasai.</p>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <i class='bx bxl-html5'></i>
+            <h4>HTML</h4>
+            <p class="skill-level">Intermediate</p>
+        </div>
+        <div class="skill-card">
+            <i class='bx bxl-css3'></i>
+            <h4>CSS</h4>
+            <p class="skill-level">Beginner</p>
+        </div>
+        <div class="skill-card">
+            <i class='bx bxl-javascript'></i>
+            <h4>JavaScript</h4>
+            <p class="skill-level">Intermediate</p>
+        </div>
+        <div class="skill-card nextjs">
+            <i class='bx bxl-nodejs'></i>
+            <h4>Node.js</h4>
+            <p class="skill-level">Intermediate</p>
+        </div>
+        <div class="skill-card">
+            <i class='bx bx-code-alt'></i>
+            <h4>Express.js</h4>
+            <p class="skill-level">Intermediate</p>
+        </div>
+       <div class="skill-card">
+    <img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="Next.js" class="skill-icon">
+    <h4>Next.js</h4>
+    <p class="skill-level">Intermediate</p>
+</div>
+
+        <div class="skill-card">
+            <i class='bx bxl-python'></i>
+            <h4>Python</h4>
+            <p class="skill-level">Beginner</p>
+        </div>
+        <div class="skill-card">
+            <i class='bx bxl-c-plus-plus'></i>
+            <h4>C++</h4>
+            <p class="skill-level">Beginner</p>
+        </div>
+        <div class="skill-card">
+            <i class='bx bx-bolt-circle'></i>
+            <h4>Vite</h4>
+            <p class="skill-level">Beginner</p>
+        </div>
+    </div>
+</section>
+
             
              <section id="projects">
                  <h3 class="section-title"><i class='bx bxs-briefcase-alt-2'></i> My Projects</h3>
@@ -500,18 +599,6 @@
                             <a href="https://manstral.biz.id"><i class='bx bx-link-external'></i> View</a>
                         </div>
                      </div>
-                     <div class="project-card">
-                        <h4>Zann Uploader</h4>
-                        <p>Platform Uploader File dengan Integrasi Google Drive & MongoDB.</p>
-                        <div class="project-tech">
-                           <span class="tech-tag">HTML5</span>
-                           <span class="tech-tag">CSS3</span>
-                           <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://cdn.zannbot.xyz"><i class='bx bx-link-external'></i> View</a>
-                        </div>
-                     </div>
             </section>
 
             <section id="music">
@@ -526,10 +613,10 @@
 
             <section id="anime">
                 <h3 class="section-title"><i class='bx bxs-movie-play'></i> My Favorite Anime</h3>
-                <p class="section-description">Koleksi anime favorites ku.</p>
+                <p class="section-description">Koleksi anime dan donghua favorites ku.</p>
                 <div class="anime-list">
                     <div class="anime-card">
-                        <img src="https://cdn.zannbot.xyz/api/file/896360c3-31e6-4968-99ac-81db66deb67e" alt="Fanren Xiu Xian Chuan">
+                        <img src="https://files.catbox.moe/6973kg.jpeg" alt="Fanren Xiu Xian Chuan">
                         <div class="anime-details">
                             <h4>Re:Zero</h4>
                             <p class="anime-meta">OVA • Unknown</p>
@@ -540,13 +627,35 @@
                         </div>
                     </div>
                      <div class="anime-card">
-                        <img src="https://cdn.zannbot.xyz/api/file/21135bb8-665d-4514-bc4e-d2744f5c919d" alt="Oshi no Ko 2nd Season">
+                        <img src="https://files.catbox.moe/2jtkhr.jpeg" alt="Oshi no Ko 2nd Season">
                         <div class="anime-details">
                             <h4>Soul Eater</h4>
                             <p class="anime-meta">TV • Unknown</p>
                             <div class="anime-links">
                                 <a href="https://myanimelist.net/anime/3588/Soul_Eater?q=soul&cat=anime">Details</a>
                                 <a href="https://myanimelist.net/anime/3588/Soul_Eater?q=soul&cat=anime" class="external-link"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="anime-card">
+                        <img src="https://files.catbox.moe/8hs1ag.jpg" alt="Oshi no Ko 2nd Season">
+                        <div class="anime-details">
+                            <h4>Bleach</h4>
+                            <p class="anime-meta">TV • Unknown</p>
+                            <div class="anime-links">
+                                <a href="https://myanimelist.net/anime/269/Bleach">Details</a>
+                                <a href="https://myanimelist.net/anime/269/Bleach" class="external-link"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="anime-card">
+                        <img src="https://files.catbox.moe/4t019l.jpg" alt="Oshi no Ko 2nd Season">
+                        <div class="anime-details">
+                            <h4>Attack On Titan</h4>
+                            <p class="anime-meta">TV • Unknown</p>
+                            <div class="anime-links">
+                                <a href="https://myanimelist.net/anime/16498/Shingeki_no_Kyojin?q=attack&cat=anime">Details</a>
+                                <a href="https://myanimelist.net/anime/16498/Shingeki_no_Kyojin?q=attack&cat=anime" class="external-link"><i class='bx bx-link-external'></i></a>
                             </div>
                         </div>
                     </div>
@@ -584,5 +693,3 @@
 
 </body>
 </html>
-
-
