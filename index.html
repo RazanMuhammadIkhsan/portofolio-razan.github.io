@@ -182,6 +182,102 @@
             font-weight: 500;
          }
 
+         /* --- My Istri Section --- */
+#istri {
+    margin-bottom: 50px;
+}
+
+#istri .section-title {
+    justify-content: center; /* Membuat judul di tengah */
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.istri-grid {
+    display: grid;
+    /* Membuat 3 kolom, atau menjadi 1 kolom di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.istri-card {
+    position: relative; /* Wajib untuk menumpuk elemen */
+    border-radius: 10px;
+    overflow: hidden; /* Agar gambar tidak keluar dari sudut rounded */
+    border: 1px solid var(--border-color);
+    height: 350px;
+    cursor: pointer;
+}
+
+.istri-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Transisi untuk efek blur dan brightness */
+    transition: transform 0.3s ease, filter 0.4s ease;
+}
+
+.istri-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 10%, transparent 80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Konten menempel di bawah */
+    padding: 20px;
+    
+    /* Awalnya disembunyikan */
+    opacity: 0; 
+    /* Transisi untuk efek fade in */
+    transition: opacity 0.4s ease;
+}
+
+.istri-content {
+    /* Efek konten muncul dari bawah sedikit */
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.istri-content h4 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.istri-content .subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.istri-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* --- EFEK HOVER --- */
+
+.istri-card:hover img {
+    /* Gambar menjadi blur, gelap, dan sedikit zoom saat di-hover */
+    filter: blur(4px) brightness(0.6);
+    transform: scale(1.05);
+}
+
+.istri-card:hover .istri-overlay {
+    /* Overlay deskripsi dimunculkan saat hover */
+    opacity: 1;
+}
+
+.istri-card:hover .istri-content {
+    /* Konten kembali ke posisi normal */
+    transform: translateY(0);
+}
+
         /* --- Common Section Styles --- */
         .section-title {
             display: flex;
@@ -630,10 +726,51 @@
                            <span class="tech-tag">Vercel</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.zannime.zone.id"><i class='bx bx-link-external'></i> View</a>
+                            <a href="https://api.zannbot.xyz"><i class='bx bx-link-external'></i> View</a>
                         </div>
                      </div>
             </section>
+
+            <section id="istri">
+    <h3 class="section-title"><i class='bx bxs-heart'></i> My Istri</h3>
+    <p class="section-description">Kumpulan My Istri dari dunia anime. Masing-masing memiliki pesona dan kisah yang tak terlupakan yang membuat mereka istimewa di mataku.</p>
+    <div class="istri-grid">
+
+        <div class="istri-card">
+            <img src="/image/rem.jpg" alt="Rem">
+            <div class="istri-overlay">
+                <div class="istri-content">
+                    <h4>Rem</h4>
+                    <span class="subtitle">Re:Zero − Starting Life in Another World</span>
+                    <p>A polite yet deadly Oni maid, who initially lived in the shadow of guilt and inferiority to her twin sister. After being saved by Subaru Natsuki, she transforms into a symbol of unconditional love and devotion, becoming his most loyal supporter and emotional pillar in the face of despair.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="istri-card">
+            <img src="/image/asuza.jpg" alt="Asuza">
+            <div class="istri-overlay">
+                <div class="istri-content">
+                    <h4>Azusa Hamaoka</h4>
+                    <span class="subtitle">Grand Blue</span>
+                    <p>A laid-back and mature senior student from the "Peek a Boo" diving club. Known for her teasing nature and her calm demeanor amidst the chaos of the club's drinking parties, she is extremely protective of Nanaka Kotegawa. Beneath her playful attitude, she is a caring and reliable senior who serves as one of the pillars of sanity within the club.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="istri-card">
+            <img src="/image//nepi.jpg" alt="Nephilia">
+            <div class="istri-overlay">
+                <div class="istri-content">
+                    <h4>Nephilia</h4>
+                    <span class="subtitle">An Archdemon's Dilemma: How to Love Your Elf Bride</span>
+                    <p>A beautiful High Elf rescued from a life of slavery by the awkward Archdemon, Zagan. Traumatized by her past and bound by a tragic curse that punishes happiness with death, she slowly rediscovers her self-worth and suppressed feelings through Zagan's unconventional kindness.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
             <section id="music">
                 <h3 class="section-title"><i class='bx bxs-music'></i> My Favorite Tracks</h3>
@@ -720,11 +857,10 @@
                  </div>
             </div>
             <div class="copyright">
-                <p>© 2025 Razan Muhammad Ikhsan. All rights reserved.</p>
+                <p>© 2025 - Razan</p>
             </div>
         </footer>
     </div>
 
 </body>
 </html>
-
