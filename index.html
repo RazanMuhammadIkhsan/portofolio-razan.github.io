@@ -1,866 +1,466 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portofolio pribadi Razan Muhammad Ikhsan, seorang web developer yang antusias dengan teknologi dan API."
+    />
+    <meta name="author" content="Razan Muhammad Ikhsan" />
+
     <title>Portofolio | Razan Muhammad Ikhsan</title>
-    <link rel="icon" type="image/png" href="https://files.catbox.moe/ju75p8.jpeg">
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://files.catbox.moe/ju75p8.jpeg"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-    <style>
-        /* CSS Variables & Global Styles */
-        :root {
-            --bg-color: #0D1117;
-            --primary-color: #161B22;
-            --border-color: #30363D;
-            --text-primary: #E6EDF3;
-            --text-secondary: #8B949E;
-            --accent-color: #22D3EE;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-size: 16px;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--primary-color);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-color);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #1cbac9;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        h1, h2, h3 {
-            font-weight: 600;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--accent-color);
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: var(--text-primary);
-        }
-
-        /* --- Header Section --- */
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .profile-avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            outline: 3px solid var(--accent-color);
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        .profile-actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .action-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            background-color: var(--primary-color);
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .action-btn:hover {
-            background-color: #2a3038;
-        }
-        .action-btn i {
-            font-size: 1.2rem;
-        }
-
-        .about-me {
-            background-color: var(--primary-color);
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: left;
-        }
-        .about-me h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-        .about-me p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        /* --- Stats Section --- */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-        .stat-card {
-            background-color: var(--primary-color);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .stat-card .label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 5px;
-        }
-        .stat-card .value {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        
-        /* --- Developer Info --- */
-        .dev-info {
-             display: flex;
-             justify-content: space-between;
-             background-color: var(--primary-color);
-             border: 1px solid var(--border-color);
-             padding: 20px;
-             border-radius: 10px;
-             margin-bottom: 50px;
-        }
-        .info-item {
-            text-align: center;
-            flex-basis: 50%;
-        }
-        .info-item .label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-         .info-item .value {
-            font-size: 1.1rem;
-            font-weight: 500;
-         }
-
-         /* --- My Istri Section --- */
-#istri {
-    margin-bottom: 50px;
-}
-
-#istri .section-title {
-    justify-content: center; /* Membuat judul di tengah */
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    font-weight: 700;
-}
-
-.istri-grid {
-    display: grid;
-    /* Membuat 3 kolom, atau menjadi 1 kolom di layar kecil */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.istri-card {
-    position: relative; /* Wajib untuk menumpuk elemen */
-    border-radius: 10px;
-    overflow: hidden; /* Agar gambar tidak keluar dari sudut rounded */
-    border: 1px solid var(--border-color);
-    height: 350px;
-    cursor: pointer;
-}
-
-.istri-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Transisi untuk efek blur dan brightness */
-    transition: transform 0.3s ease, filter 0.4s ease;
-}
-
-.istri-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 10%, transparent 80%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Konten menempel di bawah */
-    padding: 20px;
-    
-    /* Awalnya disembunyikan */
-    opacity: 0; 
-    /* Transisi untuk efek fade in */
-    transition: opacity 0.4s ease;
-}
-
-.istri-content {
-    /* Efek konten muncul dari bawah sedikit */
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
-}
-
-.istri-content h4 {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-}
-
-.istri-content .subtitle {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.istri-content p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--text-primary);
-}
-
-/* --- EFEK HOVER --- */
-
-.istri-card:hover img {
-    /* Gambar menjadi blur, gelap, dan sedikit zoom saat di-hover */
-    filter: blur(4px) brightness(0.6);
-    transform: scale(1.05);
-}
-
-.istri-card:hover .istri-overlay {
-    /* Overlay deskripsi dimunculkan saat hover */
-    opacity: 1;
-}
-
-.istri-card:hover .istri-content {
-    /* Konten kembali ke posisi normal */
-    transform: translateY(0);
-}
-
-        /* --- Common Section Styles --- */
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .section-title i {
-            color: var(--accent-color);
-        }
-        .section-description {
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-            max-width: 600px;
-        }
-        
-        /* Faked Spotify Player */
-        .spotify-player {
-            background-color: var(--primary-color);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 50px;
-        }
-        .player-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .player-header img {
-            width: 100px;
-            height: 100px;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-        .player-header .track-info h4 {
-            font-size: 1.2rem;
-        }
-        .player-header .track-info p {
-            color: var(--text-secondary);
-        }
-        .player-header .track-info a {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 6px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .track-list ol {
-            list-style: none;
-        }
-        .track-item {
-            display: grid;
-            grid-template-columns: 20px 1fr 50px;
-            gap: 15px;
-            align-items: center;
-            padding: 12px 5px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .track-item:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .track-item .track-number {
-            color: var(--text-secondary);
-        }
-        .track-item .track-details .title {
-            font-weight: 500;
-        }
-        .track-item .track-details .artist {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        .track-item .track-duration {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            text-align: right;
-        }
-        
-        /* --- Projects Section --- */
-        #projects {
-            margin-bottom: 50px;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .project-card {
-            background-color: var(--primary-color);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .project-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            flex-grow: 1;
-            margin-bottom: 20px;
-        }
-        .project-tech {
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tech-tag {
-            background-color: rgba(34, 211, 238, 0.1);
-            color: var(--accent-color);
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        .project-links {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        .project-links a {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 500;
-        }
-        .project-links a i {
-            font-size: 1.2rem;
-        }
-        
-        /* --- Favorite Anime Section --- */
-        #anime {
-            margin-bottom: 50px;
-        }
-        .anime-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .anime-card {
-            background-color: var(--primary-color);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .anime-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-        }
-        .anime-details {
-            padding: 20px;
-        }
-        .anime-details h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        .anime-meta {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        .anime-links {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .anime-links .external-link i {
-            font-size: 1.3rem;
-        }
-
-        /* --- Skills Section --- */
-#skills {
-    margin-bottom: 50px;
-}
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-}
-.skill-card {
-    background-color: var(--primary-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-.skill-card:hover {
-    transform: translateY(-5px);
-}
-.skill-card i {
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 10px;
-}
-.skill-card h4 {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-.skill-level {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-.skill-card .skill-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
-    object-fit: contain;
-    filter: invert(64%) sepia(57%) saturate(7490%) hue-rotate(156deg) brightness(97%) contrast(94%);
-}
-
-
-
-
-        
-        /* --- Footer --- */
-        .main-footer {
-            border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-            text-align: center;
-        }
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-        .footer-section {
-            text-align: left;
-        }
-        .footer-section h4 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-        .quick-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .quick-links a {
-            color: var(--text-secondary);
-        }
-        .quick-links a:hover {
-            color: var(--accent-color);
-        }
-        .contact-email {
-            display: block;
-            margin-bottom: 15px;
-            color: var(--text-secondary);
-        }
-        .contact-btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            padding: 10px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: opacity 0.3s ease;
-        }
-        .contact-btn:hover {
-            opacity: 0.9;
-        }
-
-        .copyright {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        .copyright p {
-            margin-bottom: 5px;
-        }
-        .copyright .made-with {
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <img src="/image/foto.jpg" alt="Foto Profil Razan" class="profile-avatar">
-            <div class="profile-actions">
-                <a href="#" class="action-btn"><i class='bx bxs-message-rounded-dots'></i> Who is Razan?</a>
+      <header class="header">
+        <img
+          src="/image/foto.jpg"
+          alt="Foto Profil Razan"
+          class="profile-avatar"
+        />
+        <h1>Razan Muhammad Ikhsan</h1>
+        <p class="subtitle">Web Developer & Tech Enthusiast</p>
+        <div class="profile-actions">
+          <a href="#about-me" class="action-btn"
+            ><i class="bx bxs-message-rounded-dots"></i> Who is Razan?</a
+          >
+        </div>
+        <div id="about-me" class="about-me">
+          <h3>About Me</h3>
+          <p>
+            Halo! Saya Razan Muhammad Ikhsan, seorang web developer yang
+            antusias dengan teknologi dan API. Saya suka mengeksplorasi dunia
+            coding, membangun aplikasi inovatif, dan selalu mencari tantangan
+            baru dalam dunia teknologi.
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <dl class="stats-grid">
+          <div class="stat-card">
+            <dt class="label">Age</dt>
+            <dd class="value">16</dd>
+          </div>
+          <div class="stat-card">
+            <dt class="label">Location</dt>
+            <dd class="value">Indonesia</dd>
+          </div>
+          <div class="stat-card">
+            <dt class="label">Status</dt>
+            <dd class="value">Masih Sekolah 🥀</dd>
+          </div>
+          <div class="stat-card">
+            <dt class="label">Hobbies</dt>
+            <dd class="value">Coding, Anime, Gaming, Design</dd>
+          </div>
+        </dl>
+
+        <section class="dev-info">
+          <div class="info-item">
+            <p class="label">Developer</p>
+            <p class="value">Razan</p>
+          </div>
+          <div class="info-item">
+            <p class="label">Favorite Anime</p>
+            <p class="value">Re:Zero</p>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2 class="section-title"><i class="bx bxs-bolt"></i> My Skills</h2>
+          <p class="section-description">
+            Beberapa skill pemrograman dan framework yang saya kuasai.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <i class="bx bxl-html5"></i>
+              <h4>HTML</h4>
+              <p class="skill-level">Intermediate</p>
             </div>
-            <div class="about-me">
-                <h3>About Me</h3>
-                <p>Halo! Saya Razan Muhammad Ikhsan, seorang web developer yang antusias dengan teknologi dan API. Saya suka mengeksplorasi dunia coding, membangun aplikasi inovatif, dan selalu mencari tantangan baru dalam dunia teknologi.</p>
+            <div class="skill-card">
+              <i class="bx bxl-css3"></i>
+              <h4>CSS</h4>
+              <p class="skill-level">Beginner</p>
             </div>
-        </header>
+            <div class="skill-card">
+              <i class="bx bxl-javascript"></i>
+              <h4>JavaScript</h4>
+              <p class="skill-level">Intermediate</p>
+            </div>
+            <div class="skill-card">
+              <i class="bx bxl-typescript"></i>
+              <h4>TypeScript</h4>
+              <p class="skill-level">Beginner</p>
+            </div>
+            <div class="skill-card">
+              <i class="bx bxl-nodejs"></i>
+              <h4>Node.js</h4>
+              <p class="skill-level">Intermediate</p>
+            </div>
+            <div class="skill-card">
+              <i class="bx bx-code-alt"></i>
+              <h4>Express.js</h4>
+              <p class="skill-level">Intermediate</p>
+            </div>
+            <div class="skill-card">
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/next-js.svg"
+                alt="Next.js icon"
+                class="skill-icon"
+              />
+              <h4>Next.js</h4>
+              <p class="skill-level">Intermediate</p>
+            </div>
+            <div class="skill-card">
+              <i class="bx bxl-python"></i>
+              <h4>Python</h4>
+              <p class="skill-level">Beginner</p>
+            </div>
+            <div class="skill-card">
+              <i class="bx bxl-c-plus-plus"></i>
+              <h4>C++</h4>
+              <p class="skill-level">Beginner</p>
+            </div>
+            <div class="skill-card">
+              <i class="bx bx-bolt-circle"></i>
+              <h4>Vite</h4>
+              <p class="skill-level">Beginner</p>
+            </div>
+          </div>
+        </section>
 
-        <main>
-            <section class="stats-grid">
-                <div class="stat-card">
-                    <p class="label">Age</p>
-                    <p class="value">16</p>
-                </div>
-                <div class="stat-card">
-                    <p class="label">Location</p>
-                    <p class="value">Indonesia</p>
-                </div>
-                <div class="stat-card">
-                    <p class="label">Status</p>
-                    <p class="value">Masih Sekolah 🥀</p>
-                </div>
-                <div class="stat-card">
-                    <p class="label">Hobbies</p>
-                    <p class="value">Coding, Anime, Gaming, Design</p>
-                </div>
-            </section>
-            
-            <section class="dev-info">
-                <div class="info-item">
-                    <p class="label">Developer</p>
-                    <p class="value">Razan</p>
-                </div>
-                 <div class="info-item">
-                    <p class="label">Anime Series</p>
-                    <p class="value">Re:zero</p>
-                </div>
-            </section>
+        <section id="projects">
+          <h2 class="section-title">
+            <i class="bx bxs-briefcase-alt-2"></i> My Projects
+          </h2>
+          <p class="section-description">
+            Berikut adalah beberapa proyek yang pernah saya kerjakan, baik
+            proyek pribadi maupun kontribusi open source.
+          </p>
+          <div class="project-grid">
+            <div class="project-card">
+              <h4>Personal Portfolio</h4>
+              <p>
+                Website portofolio pribadi yang Anda lihat saat ini, dibuat
+                untuk menampilkan proyek yang saya miliki.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span
+                ><span class="tech-tag">CSS3</span
+                ><span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://razan.is-a.dev"
+                  ><i class="bx bx-link-external"></i> View</a
+                >
+              </div>
+            </div>
+            <div class="project-card">
+              <h4>Website Manstral</h4>
+              <p>
+                Sebuah portal web yang dinamis dan sepenuhnya responsif untuk
+                komunitas "Manstral".
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span
+                ><span class="tech-tag">CSS3</span
+                ><span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://manstral.biz.id"
+                  ><i class="bx bx-link-external"></i> View</a
+                >
+              </div>
+            </div>
+            <div class="project-card">
+              <h4>REST API</h4>
+              <p>Kumpulan REST API yang dinamis, gratis, dan open-source.</p>
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript</span
+                ><span class="tech-tag">Express JS</span
+                ><span class="tech-tag">Vercel</span>
+              </div>
+              <div class="project-links">
+                <a href="https://api.zannbot.xyz"
+                  ><i class="bx bx-link-external"></i> View</a
+                >
+              </div>
+            </div>
+            <div class="project-card">
+              <h4>Zannime</h4>
+              <p>
+                Proyek pribadi untuk membangun aplikasi web streaming anime yang
+                fungsional dan modern.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Vite</span
+                ><span class="tech-tag">React</span
+                ><span class="tech-tag">TypeScript</span
+                ><span class="tech-tag">Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.zannime.zone.id"><i class="bx bx-link-external"></i> View</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <h4>Uhuyy</h4>
+              <p>
+                Proyek pribadi untuk membangun aplikasi web subdomain yang
+                fungsional dan modern.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Vite</span
+                ><span class="tech-tag">React</span
+                ><span class="tech-tag">JavaScript</span
+                ><span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Vercel</span>
+                <span class="tech-tag">ClaudFlare</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.uhuyy.zone.id/"><i class="bx bx-link-external"></i> View</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <section id="skills">
-    <h3 class="section-title"><i class='bx bxs-bolt'></i> My Skills</h3>
-    <p class="section-description">Beberapa skill pemrograman dan framework yang saya kuasai.</p>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <i class='bx bxl-html5'></i>
-            <h4>HTML</h4>
-            <p class="skill-level">Intermediate</p>
-        </div>
-        <div class="skill-card">
-            <i class='bx bxl-css3'></i>
-            <h4>CSS</h4>
-            <p class="skill-level">Beginner</p>
-        </div>
-        <div class="skill-card">
-            <i class='bx bxl-javascript'></i>
-            <h4>JavaScript</h4>
-            <p class="skill-level">Intermediate</p>
-        </div>
-        <div class="skill-card">
-            <i class='bx bxl-typescript'></i>
-            <h4>TypeScript</h4>
-            <p class="skill-level">Beginner</p>
-        </div>
-        <div class="skill-card nextjs">
-            <i class='bx bxl-nodejs'></i>
-            <h4>Node.js</h4>
-            <p class="skill-level">Intermediate</p>
-        </div>
-        <div class="skill-card">
-            <i class='bx bx-code-alt'></i>
-            <h4>Express.js</h4>
-            <p class="skill-level">Intermediate</p>
-        </div>
-       <div class="skill-card">
-    <img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="Next.js" class="skill-icon">
-    <h4>Next.js</h4>
-    <p class="skill-level">Intermediate</p>
-</div>
-
-        <div class="skill-card">
-            <i class='bx bxl-python'></i>
-            <h4>Python</h4>
-            <p class="skill-level">Beginner</p>
-        </div>
-        <div class="skill-card">
-            <i class='bx bxl-c-plus-plus'></i>
-            <h4>C++</h4>
-            <p class="skill-level">Beginner</p>
-        </div>
-        <div class="skill-card">
-            <i class='bx bx-bolt-circle'></i>
-            <h4>Vite</h4>
-            <p class="skill-level">Beginner</p>
-        </div>
-    </div>
-</section>
-
-            
-             <section id="projects">
-                 <h3 class="section-title"><i class='bx bxs-briefcase-alt-2'></i> My Projects</h3>
-                 <p class="section-description">Berikut adalah beberapa proyek yang pernah saya kerjakan, baik proyek pribadi maupun kontribusi open source.</p>
-                 <div class="project-grid">
-                     <div class="project-card">
-                        <h4>Personal Portfolio</h4>
-                        <p>Website portofolio pribadi yang Anda lihat saat ini, dibuat untuk menampilkan proyek yang saya miliki.</p>
-                        <div class="project-tech">
-                           <span class="tech-tag">HTML5</span>
-                           <span class="tech-tag">CSS3</span>
-                           <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://razan.is-a.dev"><i class='bx bx-link-external'></i> View</a>
-                        </div>
-                     </div>
-                     <div class="project-card">
-                        <h4>Website Manstral</h4>
-                        <p>Sebuah portal web yang dinamis dan sepenuhnya responsif untuk komunitas "Manstral" website ini berfungsi sebagai pusat informasi grup, menampilkan galeri foto, struktur anggota yang dinamis.</p>
-                        <div class="project-tech">
-                           <span class="tech-tag">HTML5</span>
-                           <span class="tech-tag">CSS3</span>
-                           <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://manstral.biz.id"><i class='bx bx-link-external'></i> View</a>
-                        </div>
-                     </div>
-                     <div class="project-card">
-                        <h4>REST API</h4>
-                        <p>Kumpulan REST API yang dinamis, gratis, dan open-source.</p>
-                        <div class="project-tech">
-                           <span class="tech-tag">HTML5</span>
-                           <span class="tech-tag">CSS3</span>
-                           <span class="tech-tag">JavaScript</span>
-                           <span class="tech-tag">Express JS</span>
-                           <span class="tech-tag">Vercel</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://api.zannbot.xyz"><i class='bx bx-link-external'></i> View</a>
-                        </div>
-                     </div>
-                     <div class="project-card">
-                        <h4>Zannime</h4>
-                        <p>Ini adalah proyek pribadi saya untuk membangun sebuah aplikasi web streaming anime yang fungsional dan modern.</p>
-                        <div class="project-tech">
-                           <span class="tech-tag">Vite</span>
-                           <span class="tech-tag">React</span>
-                           <span class="tech-tag">TypeScript</span>
-                           <span class="tech-tag">Tailwind CSS</span>
-                           <span class="tech-tag">Framer Motion</span>
-                           <span class="tech-tag">Vercel</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://api.zannbot.xyz"><i class='bx bx-link-external'></i> View</a>
-                        </div>
-                     </div>
-            </section>
-
-            <section id="istri">
-    <h3 class="section-title"><i class='bx bxs-heart'></i> My Istri</h3>
-    <p class="section-description">Kumpulan My Istri dari dunia anime. Masing-masing memiliki pesona dan kisah yang tak terlupakan yang membuat mereka istimewa di mataku.</p>
-    <div class="istri-grid">
-
-        <div class="istri-card">
-            <img src="/image/rem.jpg" alt="Rem">
-            <div class="istri-overlay">
+        <section id="istri">
+          <h2 class="section-title section-title--centered">
+            <i class="bx bxs-heart"></i> My Istri
+          </h2>
+          <p class="section-description">
+            Kumpulan My Istri dari dunia anime yang memiliki pesona dan kisah
+            tak terlupakan.
+          </p>
+          <div class="istri-grid">
+            <div class="istri-card">
+              <img src="/image/rem.jpg" alt="Rem dari Re:Zero" loading="lazy" />
+              <div class="istri-overlay">
                 <div class="istri-content">
-                    <h4>Rem</h4>
-                    <span class="subtitle">Re:Zero − Starting Life in Another World</span>
-                    <p>A polite yet deadly Oni maid, who initially lived in the shadow of guilt and inferiority to her twin sister. After being saved by Subaru Natsuki, she transforms into a symbol of unconditional love and devotion, becoming his most loyal supporter and emotional pillar in the face of despair.</p>
+                  <h4>Rem</h4>
+                  <span class="subtitle">Re:Zero</span>
+                  <p>
+                    Simbol cinta tanpa syarat dan pilar emosional dalam
+                    menghadapi keputusasaan.
+                  </p>
                 </div>
+              </div>
             </div>
-        </div>
-
-        <div class="istri-card">
-            <img src="/image/asuza.jpg" alt="Asuza">
-            <div class="istri-overlay">
+            <div class="istri-card">
+              <img
+                src="/image/asuza.jpg"
+                alt="Azusa Hamaoka dari Grand Blue"
+                loading="lazy"
+              />
+              <div class="istri-overlay">
                 <div class="istri-content">
-                    <h4>Azusa Hamaoka</h4>
-                    <span class="subtitle">Grand Blue</span>
-                    <p>A laid-back and mature senior student from the "Peek a Boo" diving club. Known for her teasing nature and her calm demeanor amidst the chaos of the club's drinking parties, she is extremely protective of Nanaka Kotegawa. Beneath her playful attitude, she is a caring and reliable senior who serves as one of the pillars of sanity within the club.</p>
+                  <h4>Azusa Hamaoka</h4>
+                  <span class="subtitle">Grand Blue</span>
+                  <p>
+                    Senior yang santai, dewasa, dan peduli di tengah kekacauan
+                    klub selam "Peek a Boo".
+                  </p>
                 </div>
+              </div>
             </div>
-        </div>
-
-        <div class="istri-card">
-            <img src="/image//nepi.jpg" alt="Nephilia">
-            <div class="istri-overlay">
+            <div class="istri-card">
+              <img
+                src="/image/yoru.jpg"
+                alt="Asa Mitaka & Yoru dari Chainsaw Man"
+                loading="lazy"
+              />
+              <div class="istri-overlay">
                 <div class="istri-content">
-                    <h4>Nephilia</h4>
-                    <span class="subtitle">An Archdemon's Dilemma: How to Love Your Elf Bride</span>
-                    <p>A beautiful High Elf rescued from a life of slavery by the awkward Archdemon, Zagan. Traumatized by her past and bound by a tragic curse that punishes happiness with death, she slowly rediscovers her self-worth and suppressed feelings through Zagan's unconventional kindness.</p>
+                  <h4>Asa Mitaka & Yoru</h4>
+                  <span class="subtitle">Chainsaw Man</span>
+                  <p>
+                    Aliansi yang tidak stabil antara siswi canggung dan Iblis
+                    Perang yang arogan.
+                  </p>
                 </div>
+              </div>
             </div>
+            <div class="istri-card">
+              <img
+                src="/image/nepi.jpg"
+                alt="Nephilia dari An Archdemon's Dilemma"
+                loading="lazy"
+              />
+              <div class="istri-overlay">
+                <div class="istri-content">
+                  <h4>Nephilia</h4>
+                  <span class="subtitle">An Archdemon's Dilemma</span>
+                  <p>
+                    Seorang High Elf cantik yang perlahan menemukan kembali
+                    harga dirinya.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="music">
+          <h2 class="section-title">
+            <i class="bx bxs-music"></i> My Favorite Tracks
+          </h2>
+          <p class="section-description">
+            Lagu-lagu yang selalu menemaniku saat coding, memberikan inspirasi
+            dan semangat.
+          </p>
+          <div class="spotify-player">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7tENBsNm0vZzOvcAGeTOaX?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </section>
+
+        <section id="anime">
+          <h2 class="section-title">
+            <i class="bx bxs-movie-play"></i> My Favorite Anime
+          </h2>
+          <p class="section-description">
+            Koleksi anime dan donghua favoritku.
+          </p>
+          <div class="anime-list">
+            <div class="anime-card">
+              <img
+                src="https://files.catbox.moe/6973kg.jpeg"
+                alt="Poster Re:Zero"
+                loading="lazy"
+              />
+              <div class="anime-details">
+                <h4>Re:Zero</h4>
+                <div class="anime-links">
+                  <a href="#">Details</a
+                  ><a href="#" class="external-link"
+                    ><i class="bx bx-link-external"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="anime-card">
+              <img
+                src="https://files.catbox.moe/2jtkhr.jpeg"
+                alt="Poster Soul Eater"
+                loading="lazy"
+              />
+              <div class="anime-details">
+                <h4>Soul Eater</h4>
+                <div class="anime-links">
+                  <a href="#">Details</a
+                  ><a href="#" class="external-link"
+                    ><i class="bx bx-link-external"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="anime-card">
+              <img
+                src="https://files.catbox.moe/8hs1ag.jpg"
+                alt="Poster Bleach"
+                loading="lazy"
+              />
+              <div class="anime-details">
+                <h4>Bleach</h4>
+                <div class="anime-links">
+                  <a href="#">Details</a
+                  ><a href="#" class="external-link"
+                    ><i class="bx bx-link-external"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="anime-card">
+              <img
+                src="https://upld.zone.id/uploads/sdidpsiq/grand-blue.webp"
+                alt="Poster Grand Blue"
+                loading="lazy"
+              />
+              <div class="anime-details">
+                <h4>Grand Blue</h4>
+                <div class="anime-links">
+                  <a href="#">Details</a
+                  ><a href="#" class="external-link"
+                    ><i class="bx bx-link-external"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="anime-card">
+              <img
+                src="https://files.catbox.moe/4t019l.jpg"
+                alt="Poster Attack On Titan"
+                loading="lazy"
+              />
+              <div class="anime-details">
+                <h4>Attack On Titan</h4>
+                <div class="anime-links">
+                  <a href="#">Details</a
+                  ><a href="#" class="external-link"
+                    ><i class="bx bx-link-external"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4><i class="bx bxs-rocket"></i> RAZAN PROJECTS</h4>
+            <p class="section-description">
+              Profil pribadi yang menampilkan perjalanan, skill, dan proyek
+              saya.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#anime">Anime</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <address>
+              <a href="mailto:razan@zannbot.xyz" class="contact-email"
+                >razan@zannbot.xyz</a
+              >
+            </address>
+            <a href="mailto:razan@zannbot.xyz" class="contact-btn"
+              >Contact Me</a
+            >
+          </div>
         </div>
-
+        <div class="copyright">
+          <p>© 2025 - Razan Muhammad Ikhsan</p>
+        </div>
+      </footer>
     </div>
-</section>
-
-            <section id="music">
-                <h3 class="section-title"><i class='bx bxs-music'></i> My Favorite Tracks</h3>
-                <p class="section-description">Kumpulan lagu-lagu yang selalu menemaniku saat main game santai atau coding dan mengerjakan proyek, memberikan inspirasi dan semangat untuk terus berkarya.</p>
-                <div class="spotify-player">
-                    <div class="player-header">
-                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7tENBsNm0vZzOvcAGeTOaX?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </section>
-
-            <section id="anime">
-                <h3 class="section-title"><i class='bx bxs-movie-play'></i> My Favorite Anime</h3>
-                <p class="section-description">Koleksi anime dan donghua favorites ku.</p>
-                <div class="anime-list">
-                    <div class="anime-card">
-                        <img src="https://files.catbox.moe/6973kg.jpeg" alt="Fanren Xiu Xian Chuan">
-                        <div class="anime-details">
-                            <h4>Re:Zero</h4>
-                            <p class="anime-meta">OVA • Unknown</p>
-                            <div class="anime-links">
-                                <a href="https://myanimelist.net/anime/38414/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_-_Hyouketsu_no_Kizuna?q=re%3Azer&cat=anime">Details</a>
-                                <a href="https://myanimelist.net/anime/38414/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_-_Hyouketsu_no_Kizuna?q=re%3Azer&cat=anime" class="external-link"><i class='bx bx-link-external'></i></a>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="anime-card">
-                        <img src="https://files.catbox.moe/2jtkhr.jpeg" alt="Oshi no Ko 2nd Season">
-                        <div class="anime-details">
-                            <h4>Soul Eater</h4>
-                            <p class="anime-meta">TV • Unknown</p>
-                            <div class="anime-links">
-                                <a href="https://myanimelist.net/anime/3588/Soul_Eater?q=soul&cat=anime">Details</a>
-                                <a href="https://myanimelist.net/anime/3588/Soul_Eater?q=soul&cat=anime" class="external-link"><i class='bx bx-link-external'></i></a>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="anime-card">
-                        <img src="https://files.catbox.moe/8hs1ag.jpg" alt="Oshi no Ko 2nd Season">
-                        <div class="anime-details">
-                            <h4>Bleach</h4>
-                            <p class="anime-meta">TV • Unknown</p>
-                            <div class="anime-links">
-                                <a href="https://myanimelist.net/anime/269/Bleach">Details</a>
-                                <a href="https://myanimelist.net/anime/269/Bleach" class="external-link"><i class='bx bx-link-external'></i></a>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="anime-card">
-                        <img src="https://files.catbox.moe/4t019l.jpg" alt="Oshi no Ko 2nd Season">
-                        <div class="anime-details">
-                            <h4>Attack On Titan</h4>
-                            <p class="anime-meta">TV • Unknown</p>
-                            <div class="anime-links">
-                                <a href="https://myanimelist.net/anime/16498/Shingeki_no_Kyojin?q=attack&cat=anime">Details</a>
-                                <a href="https://myanimelist.net/anime/16498/Shingeki_no_Kyojin?q=attack&cat=anime" class="external-link"><i class='bx bx-link-external'></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-        <footer class="main-footer">
-            <div class="footer-content">
-                 <div class="footer-section">
-                     <h4><i class='bx bxs-rocket'></i> RAZAN PROJECTS</h4>
-                     <p class="section-description">A personal profile showcasing my journey, skills, and projects.</p>
-                 </div>
-                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="quick-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#music">Music</a></li>
-                        <li><a href="#anime">Anime</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
-                 </div>
-                 <div class="footer-section">
-                    <h4>Contact</h4>
-                     <a href="mailto:contact@razan.site" class="contact-email">razan@zannbot.xyz</a>
-                     <a href="#" class="contact-btn">Contact Me</a>
-                 </div>
-            </div>
-            <div class="copyright">
-                <p>© 2025 - Razan</p>
-            </div>
-        </footer>
-    </div>
-
-</body>
+  </body>
 </html>
